@@ -1,4 +1,4 @@
-import { getMessageByErrorCode } from "@/lib/errors";
+import { getMessageByErrorCode } from "@/shared/errors";
 import { expect, test } from "../fixtures";
 import { generateRandomTestUser } from "../helpers";
 import { AuthPage } from "../pages/auth";

@@ -1,12 +1,12 @@
 import { cookies } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 
-import { auth } from "@/app/(auth)/auth";
-import { Chat } from "@/components/chat";
-import { DataStreamHandler } from "@/components/data-stream-handler";
-import { DEFAULT_CHAT_MODEL } from "@/lib/ai/models";
-import { getChatById, getMessagesByChatId } from "@/lib/db/queries";
-import { convertToUIMessages } from "@/lib/utils";
+import { auth } from "@/backend/auth/auth";
+import { Chat } from "@/frontend/components/chat";
+import { DataStreamHandler } from "@/frontend/components/data-stream-handler";
+import { DEFAULT_CHAT_MODEL } from "@/backend/lib/ai/models";
+import { getChatById, getMessagesByChatId } from "@/backend/lib/db/queries";
+import { convertToUIMessages } from "@/shared/utils";
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;

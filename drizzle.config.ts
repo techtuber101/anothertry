@@ -6,8 +6,8 @@ config({
 });
 
 export default defineConfig({
-  schema: "./lib/db/schema.ts",
-  out: "./lib/db/migrations",
+  schema: "./backend/lib/db/schema.ts",
+  out: "./backend/lib/db/migrations",
   dialect: "postgresql",
   dbCredentials: {
     // biome-ignore lint: Forbidden non-null assertion.

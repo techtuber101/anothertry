@@ -16,17 +16,17 @@ import {
 import type { ModelCatalog } from "tokenlens/core";
 import { fetchModels } from "tokenlens/fetch";
 import { getUsage } from "tokenlens/helpers";
-import { auth, type UserType } from "@/app/(auth)/auth";
-import type { VisibilityType } from "@/components/visibility-selector";
-import { entitlementsByUserType } from "@/lib/ai/entitlements";
-import type { ChatModel } from "@/lib/ai/models";
-import { type RequestHints, systemPrompt } from "@/lib/ai/prompts";
-import { myProvider } from "@/lib/ai/providers";
-import { createDocument } from "@/lib/ai/tools/create-document";
-import { getWeather } from "@/lib/ai/tools/get-weather";
-import { requestSuggestions } from "@/lib/ai/tools/request-suggestions";
-import { updateDocument } from "@/lib/ai/tools/update-document";
-import { isProductionEnvironment } from "@/lib/constants";
+import { auth, type UserType } from "@/backend/auth/auth";
+import type { VisibilityType } from "@/frontend/components/visibility-selector";
+import { entitlementsByUserType } from "@/backend/lib/ai/entitlements";
+import type { ChatModel } from "@/backend/lib/ai/models";
+import { type RequestHints, systemPrompt } from "@/backend/lib/ai/prompts";
+import { myProvider } from "@/backend/lib/ai/providers";
+import { createDocument } from "@/backend/lib/ai/tools/create-document";
+import { getWeather } from "@/backend/lib/ai/tools/get-weather";
+import { requestSuggestions } from "@/backend/lib/ai/tools/request-suggestions";
+import { updateDocument } from "@/backend/lib/ai/tools/update-document";
+import { isProductionEnvironment } from "@/shared/constants";
 import {
   createStreamId,
   deleteChatById,
@@ -36,13 +36,13 @@ import {
   saveChat,
   saveMessages,
   updateChatLastContextById,
-} from "@/lib/db/queries";
-import type { DBMessage } from "@/lib/db/schema";
-import { ChatSDKError } from "@/lib/errors";
-import type { ChatMessage } from "@/lib/types";
-import type { AppUsage } from "@/lib/usage";
-import { convertToUIMessages, generateUUID } from "@/lib/utils";
-import { generateTitleFromUserMessage } from "../../actions";
+} from "@/backend/lib/db/queries";
+import type { DBMessage } from "@/backend/lib/db/schema";
+import { ChatSDKError } from "@/shared/errors";
+import type { ChatMessage } from "@/shared/types";
+import type { AppUsage } from "@/shared/usage";
+import { convertToUIMessages, generateUUID } from "@/shared/utils";
+import { generateTitleFromUserMessage } from "@/backend/actions/chat-actions";
 import { type PostRequestBody, postRequestBodySchema } from "./schema";
 
 export const maxDuration = 60;

@@ -1,9 +1,9 @@
 import { cookies } from "next/headers";
 import Script from "next/script";
-import { AppSidebar } from "@/components/app-sidebar";
-import { DataStreamProvider } from "@/components/data-stream-provider";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { auth } from "../(auth)/auth";
+import { AppSidebar } from "@/frontend/components/app-sidebar";
+import { DataStreamProvider } from "@/frontend/components/data-stream-provider";
+import { SidebarInset, SidebarProvider } from "@/frontend/components/ui/sidebar";
+import { auth } from "@/backend/auth/auth";
 
 export const experimental_ppr = true;
 

@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
-import { auth } from "@/app/(auth)/auth";
-import { getChatsByUserId, deleteAllChatsByUserId } from "@/lib/db/queries";
-import { ChatSDKError } from "@/lib/errors";
+import { auth } from "@/backend/auth/auth";
+import { getChatsByUserId, deleteAllChatsByUserId } from "@/backend/lib/db/queries";
+import { ChatSDKError } from "@/shared/errors";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;

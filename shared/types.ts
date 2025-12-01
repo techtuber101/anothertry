@@ -1,11 +1,11 @@
 import type { InferUITool, UIMessage } from "ai";
 import { z } from "zod";
 import type { ArtifactKind } from "@/frontend/components/artifact";
-import type { createDocument } from "./ai/tools/create-document";
-import type { getWeather } from "./ai/tools/get-weather";
-import type { requestSuggestions } from "./ai/tools/request-suggestions";
-import type { updateDocument } from "./ai/tools/update-document";
-import type { Suggestion } from "./db/schema";
+import type { createDocument } from "@/backend/lib/ai/tools/create-document";
+import type { getWeather } from "@/backend/lib/ai/tools/get-weather";
+import type { requestSuggestions } from "@/backend/lib/ai/tools/request-suggestions";
+import type { updateDocument } from "@/backend/lib/ai/tools/update-document";
+import type { Suggestion } from "@/backend/lib/db/schema";
 import type { AppUsage } from "./usage";
 
 export type DataPart = { type: "append-message"; message: string };

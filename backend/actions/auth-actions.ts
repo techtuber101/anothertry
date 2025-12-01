@@ -4,7 +4,7 @@ import { z } from "zod";
 
 import { createUser, getUser } from "@/backend/lib/db/queries";
 
-import { signIn } from "./auth";
+import { signIn } from "@/backend/auth/auth";
 
 const authFormSchema = z.object({
   email: z.string().email(),
